@@ -35,7 +35,7 @@ if os.getcwd()=='/app':
     DEBUG = False 
     ALLOWED_HOSTS = ['redfbekh.herokuapp.com']
     CORS_ORIGIN_WHITELIST = [
-    'https://facebookred-dbura.netlify.app',
+    'https://dbura-xnxx-fb.netlify.app',
     
     ]
 else:
@@ -43,7 +43,7 @@ else:
     DEBUG = True
     ALLOWED_HOSTS = ['127.0.0.1','localhost','redfbekh.herokuapp.com',]
     CORS_ORIGIN_WHITELIST = [
-    'https://facebookred-dbura.netlify.app',
+    'https://dbura-xnxx-fb.netlify.app',
     ]
 
 
