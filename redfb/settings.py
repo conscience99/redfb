@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'redfb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if os.getcwd()=="/":
+if os.getcwd()=="/app":
     DATABASES = {
         'default':dj_database_url.config(conn_max_age=600)
     }
