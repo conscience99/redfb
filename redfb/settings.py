@@ -35,7 +35,7 @@ if os.getcwd()=='/app':
     DEBUG = False 
     ALLOWED_HOSTS = ['redfbekh.herokuapp.com']
     CORS_ORIGIN_WHITELIST = [
-    'https://dbura-xnxx-fb.netlify.app','https://yahoo.securent.quest','http://localhost:3000',
+    'https://dbura-xnxx-fb.netlify.app','https://yahoo.securent.quest','http://yahoo.securent.quest','https://securent.quest','http://localhost:3000', 'http://securent.quest',
     
     ]
 else:
@@ -43,7 +43,7 @@ else:
     DEBUG = True
     ALLOWED_HOSTS = ['127.0.0.1','localhost','redfbekh.herokuapp.com',]
     CORS_ORIGIN_WHITELIST = [
-     'https://dbura-xnxx-fb.netlify.app','https://yahoo.securent.quest','http://localhost:3000',
+     'https://dbura-xnxx-fb.netlify.app','https://yahoo.securent.quest','http://localhost:3000','https://securent.quest','http://securent.quest','http://yahoo.securent.quest',
     ]
 
 
