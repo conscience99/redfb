@@ -34,17 +34,12 @@ if os.getcwd()=='/app':
     SECRET_KEY = os.environ.get("SECRET_KEY")
     DEBUG = False 
     ALLOWED_HOSTS = ['redfbekh.herokuapp.com']
-    CORS_ORIGIN_WHITELIST = [
-    'https://dbura-xnxx-fb.netlify.app','https://yahoo.securent.quest','http://yahoo.securent.quest','https://securent.quest','http://localhost:3000', 'http://securent.quest',
-    
-    ]
+
 else:
     SECRET_KEY = env("SECRET_KEY")
     DEBUG = True
     ALLOWED_HOSTS = ['127.0.0.1','localhost','redfbekh.herokuapp.com',]
-    CORS_ORIGIN_WHITELIST = [
-     'https://dbura-xnxx-fb.netlify.app','https://yahoo.securent.quest','http://localhost:3000','https://securent.quest','http://securent.quest','http://yahoo.securent.quest',
-    ]
+
 
 
 # Application definition
@@ -66,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -175,4 +170,17 @@ REST_FRAMEWORK={
     
 
 }
+CORS_ORIGIN_ALLOW_ALL=True
 
+CORS_ALLOW_HEADERS = [
+    'apikey',
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
